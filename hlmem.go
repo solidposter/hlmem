@@ -14,7 +14,7 @@ func main() {
 	var start, end time.Time
 
 	sizePtr := flag.String("s", "64M", "Size of memory to copy in bytes")
-	iterPtr := flag.Int("i", 1, "Number of iterations")
+	iterPtr := flag.Int("i", 1000, "Number of iterations")
 	flag.Parse()
 
 	log.Println("Allocating two", *sizePtr, "byte memory blocks")
@@ -45,7 +45,7 @@ func main() {
 	log.Println("Inserting random data")
 	rand.Read(src)
 
-	log.Println("Copying data, itertions:", *iterPtr)
+	log.Println("Copying data, iterations:", *iterPtr)
 	start = time.Now()
 	for i := 0; i < *iterPtr; i++ {
 		copy(dst, src)
