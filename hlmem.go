@@ -26,7 +26,7 @@ func main() {
 			log.Println("Bad memory size", *sizePtr)
 			os.Exit(1)
 		}
-		log.Println("do stuff with", *sizePtr)
+
 		switch unit {
 		case "k":
 			memSize = memSize * 1024
